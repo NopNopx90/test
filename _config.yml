@@ -1,0 +1,69 @@
+# Site settings
+title: NopNop0x90's Blog
+email: your-email@example.com # Optional
+description: >- # this means to ignore newlines until "baseurl:"
+  CTF Writeups . Darling in the Franxx themed.
+baseurl: "" # the subpath of your site, e.g. /blog. If hosted at username.github.io, this is empty.
+url: "" # conundrums your site, e.g. http://example.com. If hosted at username.github.io, this is https://username.github.io
+# twitter_username: jekyllrb # Optional
+github_username: NopNop0x90 # Optional
+
+# Author Info
+author:
+  name: NopNop0x90
+  avatar: /assets/images/logo.jpeg # Path to your logo/avatar
+
+# Build settings
+theme: null # We are building a custom theme
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Pagination (Optional, for the home page if you have many posts)
+# paginate: 5
+# paginate_path: "/blog/page:num/"
+
+# Collections (if you want to organize content beyond posts)
+# collections:
+#   my_collection:
+#     output: true
+
+# Plugins (add any Jekyll plugins here, e.g., jekyll-feed, jekyll-seo-tag)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal list.
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Theme specific settings (custom)
+theme_settings:
+  darling_red: "#e04050"
+  darling_pink: "#f08080"
+  darling_blue: "#87ceeb" # A softer blue
+  dark_bg: "#121212" #"#1a1a1d"
+  dark_text: "#e0e0e0" #"#c5c6c7"
+  dark_accent1: "#e04050"
+  dark_accent2: "#bb86fc" # A vibrant purple for dark mode
+  light_bg: "#ffffff" #"#f8f9fa"
+  light_text: "#212529"
+  light_accent1: "#d63384"
+  light_accent2: "#6f42c1"

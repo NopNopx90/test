@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<article class="post-container">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      {% if page.author %}
+        • <span>{{ page.author }}</span>
+      {% elsif site.author.name %}
+        • <span>{{ site.author.name }}</span>
+      {% endif %}
+    </p>
+    {% if page.tags.size > 0 %}
+    <p class="post-tags">
+        Tags:
+        {% for tag in page.tags %}
+        <a href="{{ site.baseurl }}/tags/#{{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+    </p>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+</article>
