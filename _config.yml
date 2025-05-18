@@ -6,7 +6,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog. If hosted at username.github.io, this is empty.
 url: "" # conundrums your site, e.g. http://example.com. If hosted at username.github.io, this is https://username.github.io
 # twitter_username: jekyllrb # Optional
-github_username: NopNop0x90 # Optional
+github_username: NopNopx90 # Optional
 
 # Author Info
 author:
