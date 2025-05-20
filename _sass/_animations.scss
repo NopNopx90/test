@@ -1,0 +1,52 @@
+// Basic fade-in for elements
+.fade-in {
+    animation: fadeInAnimation 0.5s ease-in forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeInAnimation {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  // Example: Subtle hover effect for navigation items
+  .site-nav .nav-item {
+    position: relative; // For pseudo-element positioning
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background-color: var(--darling-xx-color2); // Pink underline
+      transition: all 0.3s ease-out;
+      transform: translateX(-50%);
+    }
+    &:hover::after, &.active::after {
+      width: 80%; // Underline width on hover/active
+    }
+  }
+  
+  // Example: Header entrance animation
+  .site-header {
+      // animation: slideDown 0.5s ease-out forwards;
+  }
+  @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+  }
+  
+  
+  // Darling XX pulsate animation
+  .darling-xx {
+    // animation: pulsateXX 2s infinite ease-in-out;
+  }
+  @keyframes pulsateXX {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  
+  // Add more "cool animations" here.
+  // Consider using a library like AOS.js (Animate On Scroll) for scroll-triggered animations.
+  // If using AOS, include its CSS and JS, then add `data-aos="fade-up"` etc. to HTML elements.

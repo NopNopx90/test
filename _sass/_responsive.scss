@@ -1,0 +1,62 @@
+// Mobile first approach is good, but here's a common desktop-first example.
+// Adjust as needed for your design.
+
+// Tablet and smaller
+@media (max-width: $breakpoint-tablet) {
+    .site-header .site-title {
+      font-size: 1.5rem;
+    }
+    .site-logo {
+      height: 35px;
+      width: 35px;
+    }
+  
+    main.container {
+      padding-top: $spacing-unit;
+      padding-bottom: $spacing-unit;
+    }
+  
+    .post-preview h2 {
+      font-size: 1.6rem;
+    }
+  
+    .pagination {
+      font-size: 0.9rem;
+      a, span {
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  }
+  
+  // Mobile specific
+  @media (max-width: $breakpoint-mobile) {
+    html {
+      font-size: 15px; // Slightly smaller base font on small devices
+    }
+    .site-header .header-content {
+      flex-wrap: wrap; // Allow wrapping if title + nav + toggle is too much
+    }
+    .site-title {
+      margin-bottom: 5px; // Add some space if it wraps under the toggle
+    }
+  
+    .post-preview {
+      padding: $spacing-unit;
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+  
+    .post-content {
+      // Consider reducing margins or font sizes for readability on small screens
+    }
+  
+    .pagination {
+      flex-direction: column;
+      gap: $spacing-unit * 0.5;
+      align-items: stretch;
+      a, span {
+          text-align: center;
+      }
+    }
+  }

@@ -1,69 +1,81 @@
 # Site settings
 title: NopNop0x90's Blog
 email: your-email@example.com # Optional
-description: >- # this means to ignore newlines until "baseurl:"
-  CTF Writeups . Darling in the Franxx themed.
-baseurl: "" # the subpath of your site, e.g. /blog. If hosted at username.github.io, this is empty.
-url: "" # conundrums your site, e.g. http://example.com. If hosted at username.github.io, this is https://username.github.io
+description: >-
+  CTF Writeups • Darling in the Franxx themed.
+baseurl: "" # the subpath of your site, e.g. /blog. If hosted at username.github.io, this is ""
+url: "https://NopNopx90.github.io" # your site's domain
 # twitter_username: jekyllrb # Optional
 github_username: NopNopx90 # Optional
 
 # Author Info
 author:
   name: NopNop0x90
-  avatar: /assets/images/logo.jpeg # Path to your logo/avatar
+  # Add other author details if needed
 
 # Build settings
-theme: null # We are building a custom theme
 markdown: kramdown
+highlighter: rouge # For syntax highlighting in code blocks
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false # Set to true if you want line numbers by default
+    block:
+      line_numbers: true # Line numbers for code blocks
+      start_line: 1
 
-# Pagination (Optional, for the home page if you have many posts)
-# paginate: 5
-# paginate_path: "/blog/page:num/"
+# Pagination (for home and archives)
+paginate: 8
+paginate_path: "/page:num/"
 
-# Collections (if you want to organize content beyond posts)
-# collections:
-#   my_collection:
-#     output: true
+# Theme settings (custom)
+theme_settings:
+  logo_path: "/assets/images/logo.jpeg" # Your provided logo
+  darling_xx_color1: "#3A8DDE"  # Blue X
+  darling_xx_color2: "#E84A5F"  # Pink X
+  # Light Theme Colors
+  light_theme:
+    primary_color: "#D988B9"      # Dark Pink
+    secondary_color: "#FDF0F0"    # Off-white
+    text_color: "#333333"
+    accent_color: "#B9559B"       # A shade of pink
+    code_bg_color: "#f0e4e8"
+  # Dark Theme Colors
+  dark_theme:
+    primary_color: "#2C3E50"      # Dark Blue
+    secondary_color: "#1A1A1A"    # Blackish
+    text_color: "#EAEAEA"
+    accent_color: "#4A90E2"       # A shade of blue for accents
+    code_bg_color: "#282c34"
 
-# Plugins (add any Jekyll plugins here, e.g., jekyll-feed, jekyll-seo-tag)
+# Navigation tabs (configurable)
+# You can add or remove tabs here. `url` should be relative to your site.
+# `title` is what's displayed. `icon` could be a Font Awesome class if you integrate it.
+navigation:
+  - title: Home
+    url: /
+  - title: Archives
+    url: /archives/
+  # - title: About # Example of another tab
+  #   url: /about/
+  # - title: Tags
+  #   url: /tags/ # You'll need to create a tags page layout
+
+# Plugins (Jekyll natively supports jekyll-paginate)
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-seo-tag # Good for SEO
 
 # Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal list.
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
 exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
   - Gemfile
   - Gemfile.lock
-  - node_modules/
+  - node_modules
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-
-# Theme specific settings (custom)
-theme_settings:
-  darling_red: "#e04050"
-  darling_pink: "#f08080"
-  darling_blue: "#87ceeb" # A softer blue
-  dark_bg: "#121212" #"#1a1a1d"
-  dark_text: "#e0e0e0" #"#c5c6c7"
-  dark_accent1: "#e04050"
-  dark_accent2: "#bb86fc" # A vibrant purple for dark mode
-  light_bg: "#ffffff" #"#f8f9fa"
-  light_text: "#212529"
-  light_accent1: "#d63384"
-  light_accent2: "#6f42c1"
+  - README.md
+  - LICENSE

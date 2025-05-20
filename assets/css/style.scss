@@ -1,0 +1,62 @@
+// Import SASS partials
+@import "variables";    // Your color variables, fonts, etc.
+@import "themes";       // Theme-specific styles (light and dark)
+@import "base";         // Basic element styling, reset, typography
+@import "layout";       // Header, footer, container, grid, etc.
+@import "syntax-highlighting"; // Styles for code blocks
+@import "components";   // Buttons, cards, forms, etc.
+@import "animations";   // Your cool animations
+@import "responsive";   // Media queries
+
+// Example: Darling XX logo styling (can be moved to _layout.scss or _components.scss)
+.darling-xx {
+  font-family: 'Orbitron', sans-serif; // A futuristic font
+  font-weight: 700;
+  display: inline-block;
+  margin-left: 8px;
+  position: relative;
+  top: 2px; /* Adjust as needed */
+  .xx-1 {
+    color: var(--darling-xx-color1); // Uses CSS variable
+    margin-right: -0.3em; // Adjust for overlap
+  }
+  .xx-2 {
+    color: var(--darling-xx-color2); // Uses CSS variable
+  }
+}
+
+// Responsive mobile menu toggle
+#mobile-menu-toggle {
+    display: none; // Hidden on desktop
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0.5rem;
+}
+
+@media (max-width: $breakpoint-tablet) { // Define $breakpoint-tablet in _variables.scss
+    .site-nav .nav-links {
+        display: none; // Hide desktop nav links
+        flex-direction: column;
+        position: absolute;
+        top: 60px; // Adjust based on header height
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color);
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    .site-nav .nav-links.active {
+        display: flex; // Show when active
+    }
+    .site-nav .nav-item {
+        margin: 0.5rem 1rem;
+        text-align: center;
+    }
+    #mobile-menu-toggle {
+        display: block; // Show toggle on mobile
+    }
+}

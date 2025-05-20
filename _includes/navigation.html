@@ -1,5 +1,7 @@
 <div class="nav-links">
-  <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
-  <a href="{{ '/archive.html' | relative_url }}" {% if page.url == "/archive.html" %}class="active"{% endif %}>Archives</a>
+  {% for item in site.navigation %}
+      <a href="{{ item.url | relative_url }}" class="nav-item {% if page.url == item.url %}active{% endif %}">
+          {{ item.title }}
+      </a>
+  {% endfor %}
   </div>
-

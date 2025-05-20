@@ -1,0 +1,54 @@
+// Fonts
+$font-primary: 'Roboto', sans-serif;
+$font-heading: 'Orbitron', sans-serif; // For a techy/anime feel for headings
+
+// Breakpoints for responsiveness
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-large-desktop: 1200px;
+
+// CSS Variables for Theming (defaults for light theme)
+:root {
+  --primary-color: {{ site.theme_settings.light_theme.primary_color }};
+  --secondary-color: {{ site.theme_settings.light_theme.secondary_color }};
+  --background-color: var(--secondary-color); // Alias for clarity
+  --text-color: {{ site.theme_settings.light_theme.text_color }};
+  --accent-color: {{ site.theme_settings.light_theme.accent_color }};
+  --header-bg: var(--primary-color);
+  --header-text: var(--secondary-color);
+  --footer-bg: #f9f9f9; // Slightly different off-white
+  --footer-text: #555;
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--accent-color);
+  --border-color: #e0e0e0;
+  --code-bg-color: {{ site.theme_settings.light_theme.code_bg_color }};
+  --code-text-color: #2d2d2d;
+  --darling-xx-color1: {{ site.theme_settings.darling_xx_color1 }};
+  --darling-xx-color2: {{ site.theme_settings.darling_xx_color2 }};
+
+  // Transitions for smooth theme changes and animations
+  --theme-transition: all 0.3s ease-in-out;
+}
+
+// Dark theme variables will be applied via a class on the body
+.theme-dark {
+  --primary-color: {{ site.theme_settings.dark_theme.primary_color }};
+  --secondary-color: {{ site.theme_settings.dark_theme.secondary_color }};
+  --background-color: var(--secondary-color);
+  --text-color: {{ site.theme_settings.dark_theme.text_color }};
+  --accent-color: {{ site.theme_settings.dark_theme.accent_color }};
+  --header-bg: var(--primary-color);
+  --header-text: {{ site.theme_settings.dark_theme.text_color }};
+  --footer-bg: #111; // Darker footer
+  --footer-text: #aaa;
+  --link-color: var(--accent-color);
+  --link-hover-color: {{ site.theme_settings.dark_theme.primary_color | lighten: 15% }};
+  --border-color: #333;
+  --code-bg-color: {{ site.theme_settings.dark_theme.code_bg_color }};
+  --code-text-color: #abb2bf; // Common dark theme code text color
+}
+
+// Other variables like container width, spacing units, etc.
+$container-max-width: 1140px;
+$spacing-unit: 1rem; // Base spacing unit (e.g., 16px)
